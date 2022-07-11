@@ -166,17 +166,13 @@ $db = [
         ?>
             <section>
                 <div class="container">
-                    <?php foreach ($dBvalue as $text) {
-                        /* var_dump($text); */
-                    ?>
-                        <div>
-                            <?php echo "<" . $text["tagTitle"] . ">" ?>
-                            <?php echo $text["textTitle"] ?>
-                            <?php echo "</" . $text["tagTitle"] . ">" ?>
-                        </div>
-                        <div>
-                        </div>
-                    <?php } ?>
+                    <div>
+                        <?php echo "<" . $dBvalue["title"]["tagTitle"] . ">" ?>
+                        <?php echo $dBvalue["title"]["textTitle"] ?>
+                        <?php echo "</" . $dBvalue["title"]["tagTitle"] . ">" ?>
+                        
+                    </div>
+                    
                 </div>
             </section>
         <?php } ?>
@@ -186,3 +182,4 @@ $db = [
 </body>
 
 </html>
+
