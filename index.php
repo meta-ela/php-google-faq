@@ -4,7 +4,6 @@ $db = [
         "title" => [
             "textTitle" => "Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?",
             "tagTitle" => "h2",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "La recente <a href='#'>decisione della Corte di giustizia dell'Unione europea</a> ha profonde conseguenze per i motori di ricerca in Europa. 
@@ -39,7 +38,6 @@ $db = [
         "title" => [
             "textTitle" => "Come fa Google a proteggere la mia privacy e a tenere le mie informazioni al sicuro?",
             "tagTitle" => "h2",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "Sappiamo che la sicurezza e la privacy sono importanti per te e lo sono anche per noi. Per noi è imperativo offrire un'elevata sicurezza e 
@@ -59,7 +57,6 @@ $db = [
         "title" => [
             "textTitle" => "Perché il mio account è associato a un paese?",
             "tagTitle" => "h2",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
@@ -82,7 +79,6 @@ $db = [
         "title" => [
             "textTitle" => "Stabilire il paese associato al tuo account",
             "tagTitle" => "h3",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, 
@@ -99,7 +95,6 @@ $db = [
         "title" => [
             "textTitle" => "Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?",
             "tagTitle" => "h2",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web. I motori di ricerca non possono rimuovere i contenuti direttamente 
@@ -114,7 +109,6 @@ $db = [
         "title" => [
             "textTitle" => "Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?",
             "tagTitle" => "h2",
-            "subTitle" => "",
         ],
         "paragraph" => [
             "In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet, o URL, 
@@ -148,7 +142,7 @@ $db = [
 </head>
 
 <body>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid">
         <nav class="py-3">
             <div>
                 <div class="d-flex gap-4">
@@ -165,11 +159,30 @@ $db = [
         </nav>
     </header>
 
-    <main class="vh-100">
-        
+    <main class="h-100">
+        <?php
+        foreach ($db as $dBvalue) {
+            /* var_dump($dBvalue); */
+        ?>
+            <section>
+                <div class="container">
+                    <?php foreach ($dBvalue as $text) {
+                        /* var_dump($text); */
+                    ?>
+                        <div>
+                            <?php echo "<" . $text["tagTitle"] . ">" ?>
+                            <?php echo $text["textTitle"] ?>
+                            <?php echo "</" . $text["tagTitle"] . ">" ?>
+                        </div>
+                        <div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </section>
+        <?php } ?>
     </main>
 
-    <footer class="py-3 fixed-bottom"></footer>
+    <footer class="py-3"></footer>
 </body>
 
 </html>
