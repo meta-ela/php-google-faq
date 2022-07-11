@@ -120,6 +120,14 @@ $db = [
         ],
     ],
 ];
+
+$navLink = [
+    "Introduzione",
+    "Norme sulla privacy",
+    "Termini di servizio",
+    "Tecnologie",
+    "Domande frequenti",
+];
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +151,7 @@ $db = [
 
 <body>
     <header class="container-fluid">
-        <nav class="py-3">
+        <nav class="pt-3">
             <div>
                 <div class="d-flex gap-4">
                     <img src="google_logo.svg.png" alt="Google Logo">
@@ -153,18 +161,24 @@ $db = [
                     <!-- avatar account -->
                 </div>
             </div>
-            <div>
-                <!-- link navbar -->
+            <div class="pt-2">
+                <ul class="d-flex list-unstyled gap-5 mb-0">
+                    <?php 
+                    foreach($navLink as $link) {
+                    ?>
+                        <li><?php echo $link ?></li>
+                    <?php } ?>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <main class="h-100">
+    <main class="h-100 py-5">
         <?php
         foreach ($db as $dBvalue) {
             /* var_dump($dBvalue); */
         ?>
-            <section>
+            <section class="py-3">
                 <div class="container">
                     <div>
                         <?php echo "<" . $dBvalue["title"]["tagTitle"] . ">" ?>
@@ -180,7 +194,6 @@ $db = [
                             </p>
                         <?php } ?>
                     </div>
-                    
                 </div>
             </section>
         <?php } ?>
