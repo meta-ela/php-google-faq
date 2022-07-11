@@ -170,7 +170,15 @@ $db = [
                         <?php echo "<" . $dBvalue["title"]["tagTitle"] . ">" ?>
                         <?php echo $dBvalue["title"]["textTitle"] ?>
                         <?php echo "</" . $dBvalue["title"]["tagTitle"] . ">" ?>
-                        
+
+                        <?php
+                        foreach($dBvalue["paragraph"] as $paragraph) {
+                            /* echo print_r($dBvalue["paragraph"] ); */
+                            ?>
+                            <p>
+                            <?php echo $paragraph ?>
+                            </p>
+                        <?php } ?>
                     </div>
                     
                 </div>
