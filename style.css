@@ -1,0 +1,19 @@
+:root {
+    --grey-color: #d8d8d8;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    border-bottom: 2px solid var(--grey-color);
+}
+
+footer {
+    background-color: var(--grey-color);
+}
+
+img {
+    width: 100px;
+}
